@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="72dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/llyt_item"
+        android:layout_width="60dp"
+        android:layout_height="72dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/DIMEN_24PX">
+
+        <com.bang.bookshare.view.CircleImageView
+            android:id="@+id/civ_head_afd"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/ic_default"
+            app:border_color="@color/main_blue"
+            app:border_width="0.1dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_book_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/llyt_item"
+        android:text="@string/book_name"
+        android:textColor="@color/text_grey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_profile_dr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_book_name"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@id/llyt_item"
+        android:text="@string/tv_profile"
+        android:textColor="@color/icon_text_grey"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_book_name"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@id/tv_profile_dr"
+        android:text="@string/profile"
+        android:textColor="@color/icon_text_grey"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:id="@+id/llyt_delete"
+        android:layout_width="@dimen/DIMEN_78PX"
+        android:layout_height="fill_parent"
+        android:layout_alignParentEnd="true">
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/DIMEN_10PX"
+            android:layout_marginStart="@dimen/DIMEN_14PX"
+            android:layout_marginEnd="@dimen/DIMEN_10PX"
+            android:contentDescription="@+id/one_detail"
+            android:src="@mipmap/ic_delete" />
+    </RelativeLayout>
+</RelativeLayout>

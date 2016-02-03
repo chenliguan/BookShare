@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rllyt_title"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/DIMEN_90PX"
+    android:background="@color/main_blue"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.bang.bookshare.view.CustomHanzTV
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/DIMEN_24PX"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/TEXT_SIZE_20SP" />
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DIMEN_50PX"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/DIMEN_20PX"
+        android:layout_marginEnd="@dimen/DIMEN_24PX"
+        android:layout_toEndOf="@id/tv_title"
+        android:background="@drawable/bg_edit_shape_corners"
+        android:drawableStart="@mipmap/ic_search"
+        android:drawablePadding="@dimen/DIMEN_10PX"
+        android:hint="@string/search"
+        android:paddingStart="@dimen/DIMEN_16PX"
+        android:paddingEnd="@dimen/DIMEN_16PX"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+</RelativeLayout>

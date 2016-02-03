@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="@dimen/DIMEN_90PX"
+    android:background="@color/bg_grey"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_title"
+        layout="@layout/layout_title" />
+
+    <RelativeLayout
+        android:id="@+id/rlyt_my_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DIMEN_200PX"
+        android:layout_below="@id/layout_title"
+        android:layout_marginTop="@dimen/DIMEN_18PX"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/llyt_phone"
+            style="@style/Layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/DIMEN_48PX"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/Wrap_content"
+                android:src="@mipmap/ic_phone_my" />
+
+            <com.bang.bookshare.view.CustomMsyhTV
+                android:id="@+id/tv_phone"
+                style="@style/Wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/DIMEN_10PX"
+                android:text="@string/text_phone"
+                android:textSize="@dimen/TEXT_SIZE_18SP" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/DIMEN_48PX"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/Wrap_content"
+                android:src="@mipmap/ic_person_my" />
+
+            <com.bang.bookshare.view.CustomMsyhTV
+                android:id="@+id/tv_name"
+                style="@style/Wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/DIMEN_10PX"
+                android:text="@string/text_name"
+                android:textSize="@dimen/TEXT_SIZE_18SP" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llyt_addres"
+            style="@style/Layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/DIMEN_48PX"
+            android:layout_below="@id/llyt_phone"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/Wrap_content"
+                android:src="@mipmap/ic_addr_my" />
+
+            <com.bang.bookshare.view.CustomMsyhTV
+                android:id="@+id/tv_address"
+                style="@style/Wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/DIMEN_10PX"
+                android:text="@string/text_addr"
+                android:textSize="@dimen/TEXT_SIZE_18SP" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_write_info"
+            android:layout_width="@dimen/DIMEN_30PX"
+            android:layout_height="@dimen/DIMEN_30PX"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/DIMEN_36PX"
+            android:src="@mipmap/ic_right" />
+    </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_refresh_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rlyt_my_info"
+        android:layout_marginTop="@dimen/DIMEN_18PX"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/frame_line_grey"
+        android:dividerHeight="@dimen/DIMEN_0.5PX"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrMode="both" />
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rllyt_title"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/DIMEN_90PX"
+    android:background="@color/main_blue">
+
+    <com.bang.bookshare.view.CustomHanzTV
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/TEXT_SIZE_20SP" />
+
+</RelativeLayout>

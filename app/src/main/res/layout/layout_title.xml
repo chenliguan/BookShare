@@ -14,7 +14,7 @@
         android:layout_marginStart="@dimen/DIMEN_24PX"
         android:src="@drawable/bg_back_selector" />
 
-    <com.bang.bookshare.view.CustomHanzTV
+    <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

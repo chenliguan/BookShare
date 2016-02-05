@@ -77,7 +77,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/DIMEN_10PX"
                 android:text="@string/text_addr"
-                android:textSize="@dimen/TEXT_SIZE_18SP" />
+                android:textSize="@dimen/TEXT_SIZE_16SP" />
         </LinearLayout>
 
         <ImageView
@@ -86,7 +86,7 @@
             android:layout_height="@dimen/DIMEN_30PX"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/DIMEN_36PX"
+            android:layout_marginEnd="@dimen/DIMEN_32PX"
             android:src="@mipmap/ic_right" />
     </RelativeLayout>
 
@@ -100,6 +100,7 @@
         android:divider="@color/frame_line_grey"
         android:dividerHeight="@dimen/DIMEN_0.5PX"
         android:fadingEdge="none"
+        android:scrollbars="none"
         android:fastScrollEnabled="false"
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false"

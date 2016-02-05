@@ -75,4 +75,13 @@
             android:contentDescription="@+id/one_detail"
             android:src="@mipmap/ic_delete" />
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_is_borrowed"
+        android:layout_width="@dimen/DIMEN_50PX"
+        android:layout_height="@dimen/DIMEN_50PX"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@+id/one_detail"
+        android:src="@mipmap/ic_borrowed" />
 </RelativeLayout>

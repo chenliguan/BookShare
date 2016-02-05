@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="school">
+        <item>东莞理工学院</item>
+        <item>东莞理工学院城市学院</item>
+        <item>东莞职业技术学院</item>
+        <item>广东医学院</item>
+    </string-array>
+
+    <string-array name="borrowed">
+        <item>YES</item>
+        <item>NO</item>
+    </string-array>
+</resources>

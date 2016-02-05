@@ -2,6 +2,7 @@ package com.bang.bookshare.entity;
 
 import com.bang.bookshare.utils.GsonUtil;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -89,10 +90,10 @@ public class Book {
         return ecList;
     }
 
-    public static class EcListEntity {
+    public static class EcListEntity implements Serializable {
         private String bookAuthor;
         private String bookCode;
-        private Object bookCollections;
+        private String bookCollections;
         private String bookName;
         private String bookProfile;
         private String creater;
@@ -100,11 +101,11 @@ public class Book {
         private int id;
         private String isBorrowed;
         private String lastUpdateTime;
-        private Object lastUpdater;
-        private Object photo;
-        private Object publisherDate;
-        private Object publisherName;
-        private Object remake;
+        private String lastUpdater;
+        private String photo;
+        private String publisherDate;
+        private String publisherName;
+        private String remake;
         private long userId;
         private String userName;
 
@@ -116,7 +117,7 @@ public class Book {
             this.bookCode = bookCode;
         }
 
-        public void setBookCollections(Object bookCollections) {
+        public void setBookCollections(String bookCollections) {
             this.bookCollections = bookCollections;
         }
 
@@ -148,23 +149,23 @@ public class Book {
             this.lastUpdateTime = lastUpdateTime;
         }
 
-        public void setLastUpdater(Object lastUpdater) {
+        public void setLastUpdater(String lastUpdater) {
             this.lastUpdater = lastUpdater;
         }
 
-        public void setPhoto(Object photo) {
+        public void setPhoto(String photo) {
             this.photo = photo;
         }
 
-        public void setPublisherDate(Object publisherDate) {
+        public void setPublisherDate(String publisherDate) {
             this.publisherDate = publisherDate;
         }
 
-        public void setPublisherName(Object publisherName) {
+        public void setPublisherName(String publisherName) {
             this.publisherName = publisherName;
         }
 
-        public void setRemake(Object remake) {
+        public void setRemake(String remake) {
             this.remake = remake;
         }
 
@@ -184,7 +185,7 @@ public class Book {
             return bookCode;
         }
 
-        public Object getBookCollections() {
+        public String getBookCollections() {
             return bookCollections;
         }
 
@@ -216,23 +217,23 @@ public class Book {
             return lastUpdateTime;
         }
 
-        public Object getLastUpdater() {
+        public String getLastUpdater() {
             return lastUpdater;
         }
 
-        public Object getPhoto() {
+        public String getPhoto() {
             return photo;
         }
 
-        public Object getPublisherDate() {
+        public String getPublisherDate() {
             return publisherDate;
         }
 
-        public Object getPublisherName() {
+        public String getPublisherName() {
             return publisherName;
         }
 
-        public Object getRemake() {
+        public String getRemake() {
             return remake;
         }
 

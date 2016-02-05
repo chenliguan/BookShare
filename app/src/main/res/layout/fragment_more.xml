@@ -13,38 +13,20 @@
     <TextView style="@style/TextView" />
 
     <com.bang.bookshare.view.CustomView
+        android:id="@+id/cv_modify_pass"
+        style="@style/CustomView"
+        myandroid:iconMore="@mipmap/ic_service_scope"
+        myandroid:iconRight="@mipmap/ic_right"
+        myandroid:textCustomer="@string/modify_pass" />
+
+    <TextView style="@style/TextView" />
+
+    <com.bang.bookshare.view.CustomView
         android:id="@+id/cv_customer"
         style="@style/CustomView"
         myandroid:iconMore="@mipmap/ic_contact_customer"
         myandroid:iconRight="@mipmap/ic_right"
         myandroid:textCustomer="@string/contact_customer" />
-
-    <TextView style="@style/TextView" />
-
-    <com.bang.bookshare.view.CustomView
-        android:id="@+id/cv_problem"
-        style="@style/CustomView"
-        myandroid:iconMore="@mipmap/ic_com_problem"
-        myandroid:iconRight="@mipmap/ic_right"
-        myandroid:textCustomer="@string/com_problem" />
-
-    <TextView style="@style/TextView" />
-
-    <com.bang.bookshare.view.CustomView
-        android:id="@+id/cv_service_scope"
-        style="@style/CustomView"
-        myandroid:iconMore="@mipmap/ic_service_scope"
-        myandroid:iconRight="@mipmap/ic_right"
-        myandroid:textCustomer="@string/service_scope" />
-
-    <TextView style="@style/TextView" />
-
-    <com.bang.bookshare.view.CustomView
-        android:id="@+id/cv_about_us"
-        style="@style/CustomView"
-        myandroid:iconMore="@mipmap/ic_about_us"
-        myandroid:iconRight="@mipmap/ic_right"
-        myandroid:textCustomer="@string/about_us" />
 
     <TextView style="@style/TextView" />
 
@@ -64,4 +46,21 @@
         myandroid:iconRight="@mipmap/ic_right"
         myandroid:textCustomer="@string/feedback" />
 
+    <TextView style="@style/TextView" />
+
+    <com.bang.bookshare.view.CustomView
+        android:id="@+id/cv_about_us"
+        style="@style/CustomView"
+        myandroid:iconMore="@mipmap/ic_about_us"
+        myandroid:iconRight="@mipmap/ic_right"
+        myandroid:textCustomer="@string/about_us" />
+
+    <TextView style="@style/TextView" />
+
+    <com.bang.bookshare.view.CustomView
+        android:id="@+id/out_login"
+        style="@style/CustomView"
+        myandroid:iconMore="@mipmap/ic_com_problem"
+        myandroid:iconRight="@mipmap/ic_right"
+        myandroid:textCustomer="@string/out_login" />
 </LinearLayout>

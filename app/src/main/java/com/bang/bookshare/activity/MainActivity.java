@@ -3,11 +3,18 @@ package com.bang.bookshare.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.SaveCallback;
+import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.im.v2.AVIMException;
+import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.bang.bookshare.R;
 import com.bang.bookshare.adapter.FragmentAdapter;
 import com.bang.bookshare.fragment.HomeFragment;
@@ -15,6 +22,8 @@ import com.bang.bookshare.fragment.MoreFragment;
 import com.bang.bookshare.fragment.MyFragment;
 import com.bang.bookshare.utils.ActivityStack;
 import com.bang.bookshare.utils.ConstantUtil;
+import com.bang.bookshare.utils.LogUtil;
+import com.bang.bookshare.utils.PreferencesUtils;
 
 import java.util.ArrayList;
 
@@ -76,6 +85,8 @@ public class MainActivity extends FrameActivity implements
      * 绑定数据
      */
     private void bindData() {
+        // 当前用户聊天登录LearnCloud服务器
+        loginToLearnCloud(PreferencesUtils.getLoginPhone(this));
         // 缓存页面的个数
         fragVPager.setOffscreenPageLimit(2);
         fragVPager.setAdapter(new FragmentAdapter(
@@ -160,7 +171,7 @@ public class MainActivity extends FrameActivity implements
     @OnClick(R.id.iv_pop_add)
     public void onClick(View view) {
         // 跳转添加图书页面
-        openActivity(MyBookInfoActivity.class);
+        openActivity(AddBookActivity.class);
     }
 
     /**
@@ -169,6 +180,25 @@ public class MainActivity extends FrameActivity implements
     @Override
     public void onIntentSelected() {
         fragVPager.setCurrentItem(ConstantUtil.TAB_HOME);
+    }
+
+    /**
+     * 当前用户聊天登录LearnCloud服务器
+     */
+    public void loginToLearnCloud(String loginPhone) {
+        // 用自己的userId作为clientId，获取AVIMClient对象实例
+        AVIMClient imClient = AVIMClient.getInstance(loginPhone);
+        // 与服务器连接
+        imClient.open(new AVIMClientCallback() {
+            @Override
+            public void done(AVIMClient client, AVIMException e) {
+                if (e == null) {
+                    LogUtil.showLog("登录成功");
+                } else {
+                    LogUtil.showLog("登录不成功！");
+                }
+            }
+        });
     }
 
     /**

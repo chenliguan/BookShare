@@ -1,19 +1,26 @@
 package com.bang.bookshare.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.bang.bookshare.R;
-import com.bang.bookshare.activity.MyBookInfoActivity;
-import com.bang.bookshare.adapter.BookListAdapter;
+import com.bang.bookshare.activity.BookInfoActivity;
+import com.bang.bookshare.activity.ChatActivity;
+import com.bang.bookshare.activity.MyInfoActivity;
+import com.bang.bookshare.activity.SearchActivity;
+import com.bang.bookshare.adapter.BookHListAdapter;
 import com.bang.bookshare.entity.Book;
 import com.bang.bookshare.utils.HttpPathUtil;
+import com.bang.bookshare.utils.LogUtil;
 import com.bang.bookshare.volley.VolleyHandler;
 import com.bang.bookshare.volley.VolleyHttpRequest;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -21,6 +28,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 /**
  * 主页Fragment
@@ -82,7 +90,7 @@ public class HomeFragment extends BaseFragment {
                     // 解析数据
                     book = Book.praseJson(response);
                     // 设置适配器
-                    pullRefreshList.setAdapter(new BookListAdapter(getActivity(), book.ecList));
+                    pullRefreshList.setAdapter(new BookHListAdapter(getActivity(), book.ecList));
                 }
             }
 
@@ -121,11 +129,29 @@ public class HomeFragment extends BaseFragment {
         pullRefreshList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), MyBookInfoActivity.class);
-                intent.putExtra("userId", book.ecList.get(position - 1).getUserId());
+                Intent intent = new Intent(getActivity(), BookInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("ecListEntity", book.ecList.get(position - 1));
+                intent.putExtras(bundle);
                 getActivity().startActivity(intent);
             }
         });
+    }
+
+    /**
+     * 监听实现
+     */
+    @OnClick({R.id.tv_search})
+    public void onClick(View view) {
+
+        switch (view.getId()) {
+            case R.id.tv_search:
+                openActivity(SearchActivity.class);
+                break;
+
+            default:
+                break;
+        }
     }
 
     /**

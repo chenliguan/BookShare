@@ -14,6 +14,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.im.v2.AVIMException;
+import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.bang.bookshare.R;
 import com.bang.bookshare.activity.FrameActivity;
 import com.bang.bookshare.application.App;
@@ -21,6 +24,7 @@ import com.bang.bookshare.entity.User;
 import com.bang.bookshare.utils.ActivityStack;
 import com.bang.bookshare.utils.ConstantUtil;
 import com.bang.bookshare.utils.HttpPathUtil;
+import com.bang.bookshare.utils.LogUtil;
 import com.bang.bookshare.utils.PreferencesUtils;
 import com.bang.bookshare.utils.RegularUtil;
 import com.bang.bookshare.view.CustomHanzTV;
@@ -49,7 +53,7 @@ public class LoginActivity extends FrameActivity {
     @InjectView(R.id.et_password)
     EditText etPassWord;
     @InjectView(R.id.tv_title)
-    CustomHanzTV tvTitle;
+    TextView tvTitle;
     @InjectView(R.id.tv_title_right)
     TextView tvRegister;
 
@@ -134,17 +138,20 @@ public class LoginActivity extends FrameActivity {
                         // 写入登录信息
                         PreferencesUtils.setLoginInfo(context, mLoginPhone, mPassWord);
                         openActivityFn(MainActivity.class);
+                        showMsg(user.getMessage());
                     } else {
                         showMsg(user.getMessage());
                     }
-                    // 隐藏对话框
-                    loadingWindow.dismiss();
                 }
+                // 隐藏对话框
+                loadingWindow.dismiss();
             }
 
             @Override
             public void reqError(String error) {
                 showMsg(getString(R.string.msg_con_server_error));
+                // 隐藏对话框
+                loadingWindow.dismiss();
             }
         };
 

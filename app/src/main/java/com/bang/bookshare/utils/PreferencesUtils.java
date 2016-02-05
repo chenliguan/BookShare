@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences.Editor;
 
 import com.bang.bookshare.R;
+import com.bang.bookshare.activity.MyInfoActivity;
 
 
 /**
@@ -65,18 +66,21 @@ public class PreferencesUtils {
     /**
      * 写入用户信息
      */
-    public static void setUserInfo(Context context, boolean isShared, String name,
-                                   String phone, boolean gender, String area, String commu, String detail_addr) {
+    public static void setUserInfo(Context context, boolean isShared, String userName,
+                                   String userId, String userProfile, String userSchool, String classes, String dorm) {
         Editor editor = context.getSharedPreferences(ConstantUtil.SHARED_NAME_USERINFO, Context.MODE_PRIVATE).edit();
-        editor.putString(ConstantUtil.SHARED_KEY_NAME, name);
+        editor.putString(ConstantUtil.SHARED_KEY_NAME, userName);
         editor.putBoolean(ConstantUtil.SHARED_KEY_FLAG, isShared);
-        editor.putString(ConstantUtil.SHARED_KEY_USERPHONE, phone);
-        editor.putBoolean(ConstantUtil.SHARED_KEY_GENDER, gender);
-        editor.putString(ConstantUtil.SHARED_KEY_AREA, area);
-        editor.putString(ConstantUtil.SHARED_KEY_COMMU, commu);
-        editor.putString(ConstantUtil.SHARED_KEY_DETAIL_ADDR, detail_addr);
+        editor.putString(ConstantUtil.SHARED_KEY_USERID, userId);
+        editor.putString(ConstantUtil.SHARED_KEY_PROFILE, userProfile);
+        editor.putString(ConstantUtil.SHARED_KEY_SCHOOL, userSchool);
+        editor.putString(ConstantUtil.SHARED_KEY_CLASSES, classes);
+        editor.putString(ConstantUtil.SHARED_KEY_DORM, dorm);
         editor.apply();
     }
+
+    public static final String SHARED_KEY_USERID = "user_id";
+    // 保存用户信息-简介键名
 
     /**
      * 获取用户名字
@@ -89,42 +93,41 @@ public class PreferencesUtils {
     /**
      * 获取用户手机号
      */
-    public static String getUserPhone(Context context) {
+    public static String getUserId(Context context) {
         return context.getSharedPreferences(ConstantUtil.SHARED_NAME_USERINFO, Context.MODE_PRIVATE)
-                .getString(ConstantUtil.SHARED_KEY_USERPHONE, "");
+                .getString(ConstantUtil.SHARED_KEY_USERID, "");
     }
 
     /**
-     * 获取用户性别
+     * 获取用户简介
      */
-    public static Boolean getUserGender(Context context) {
+    public static String getUserProfile(Context context) {
         return context.getSharedPreferences(ConstantUtil.SHARED_NAME_USERINFO, Context.MODE_PRIVATE)
-                .getBoolean(ConstantUtil.SHARED_KEY_GENDER, true);
+                .getString(ConstantUtil.SHARED_KEY_PROFILE, "");
     }
 
     /**
-     * 获取用户区域
+     * 获取用户学校
      */
-    public static String getUserArea(Context context) {
+    public static String getUserSchool(Context context) {
         return context.getSharedPreferences(ConstantUtil.SHARED_NAME_USERINFO, Context.MODE_PRIVATE)
-                .getString(ConstantUtil.SHARED_KEY_AREA, "");
+                .getString(ConstantUtil.SHARED_KEY_SCHOOL, "");
     }
 
     /**
-     * 获取用户小区
+     * 获取用户班级
      */
-    public static String getUserCommu(Context context) {
+    public static String getUserClass(Context context) {
         return context.getSharedPreferences(ConstantUtil.SHARED_NAME_USERINFO, Context.MODE_PRIVATE)
-                .getString(ConstantUtil.SHARED_KEY_COMMU, "");
+                .getString(ConstantUtil.SHARED_KEY_CLASSES, "");
     }
 
     /**
-     * 获取用户详细地址
+     * 获取用户宿舍号(详细地址)
      */
-    public static String getUserAddr(Context context) {
+    public static String getUserDorm(Context context) {
         return context.getSharedPreferences(ConstantUtil.SHARED_NAME_USERINFO, Context.MODE_PRIVATE)
-                .getString(ConstantUtil.SHARED_KEY_DETAIL_ADDR, "");
+                .getString(ConstantUtil.SHARED_KEY_DORM, "");
     }
-
 
 }

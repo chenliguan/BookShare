@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_grey">
+    android:background="@color/bg_grey"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/layout_title"
         layout="@layout/layout_title" />
 
-</RelativeLayout>
+    <ListView
+        android:id="@+id/msg_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/transparent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DIMEN_90PX"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/DIMEN_16PX"
+            android:layout_marginBottom="@dimen/DIMEN_10PX"
+            android:layout_marginEnd="@dimen/DIMEN_166PX"
+            android:hint="@string/input_text"
+            android:maxLines="2" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="@dimen/DIMEN_134PX"
+            android:layout_height="@dimen/DIMEN_72PX"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/DIMEN_16PX"
+            android:background="@drawable/bg_btn_selector"
+            android:text="@string/send" />
+    </RelativeLayout>
+</LinearLayout>

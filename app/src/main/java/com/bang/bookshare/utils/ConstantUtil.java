@@ -38,8 +38,6 @@ public class ConstantUtil {
     public static final String SHARED_NAME_FIRST = "first_pref";
     // 保存用户登录信息
     public static final String SHARED_NAME_LOGIN = "login_data";
-    // 保存订单数据
-    public static final String SHARED_NAME_ORDER = "order_list";
     // 保存用户信息
     public static final String SHARED_NAME_USERINFO = "user_info";
     // 保存城市
@@ -59,16 +57,16 @@ public class ConstantUtil {
     public static final String SHARED_KEY_FLAG = "user_flag";
     // 保存用户信息-姓名键名
     public static final String SHARED_KEY_NAME = "user_name";
-    // 保存用户信息-手机号键名
-    public static final String SHARED_KEY_USERPHONE = "user_phone";
-    // 保存用户信息-性别键名
-    public static final String SHARED_KEY_GENDER = "user_gender";
-    // 保存用户信息-区键名
-    public static final String SHARED_KEY_AREA = "user_area";
-    // 保存用户信息-小区键名
-    public static final String SHARED_KEY_COMMU = "user_commu";
-    // 保存用户信息-详细地址键名
-    public static final String SHARED_KEY_DETAIL_ADDR = "user_detail_addr";
+    // 保存用户信息-手机号(用户Id)键名
+    public static final String SHARED_KEY_USERID = "user_id";
+    // 保存用户信息-简介键名
+    public static final String SHARED_KEY_PROFILE = "user_profile";
+    // 保存用户信息-学校键名
+    public static final String SHARED_KEY_SCHOOL = "user_school";
+    // 保存用户信息-班级键名
+    public static final String SHARED_KEY_CLASSES = "user_classes";
+    // 保存用户信息-宿舍号键名
+    public static final String SHARED_KEY_DORM = "user_dorm";
 
     // 保存城市-键名
     public static final String SHARED_KEY_CITY = "city_key";
@@ -100,8 +98,10 @@ public class ConstantUtil {
     public static final String VALUE_LOGIN_ACTIVITY = "LoginActivity";
     // moreFragment
     public static final String VALUE_MAIN_ACTIVITY = "MainActivity";
-    // UserInfoActivity
-    public static final String VALUE_UserInfo_ACTIVITY = "UserInfoActivity";
+    // MyInfoActivity
+    public static final String VALUE_MyInfo_ACTIVITY = "MyInfoActivity";
+    // MyBookInfoActivity
+    public static final String VALUE_MyBookInfo_ACTIVITY = "MyBookInfoActivity";
 
     // KEY值1
     public static final String INTENT_KEY = "KEY";
@@ -136,9 +136,9 @@ public class ConstantUtil {
     /**
      * 广播更新界面
      */
-    // BasketFragment-->UserInfoActivity/PayActivity更新UI广播标志
+    // MyFragment-->MyInfoActivity更新UI广播标志
     public static final String ACTION_B_U_P_UPDATEUI = "Action_BU_updateUI";
-    // HomeFragment-->CityActivity更新UI广播标志
+    // MyFragment-->MyBookInfoActivity更新UI广播标志
     public static final String ACTION_HC_UPDATEUI = "Action_HC_updateUI";
 
     // SmsObserver

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_grey"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_title"
+        layout="@layout/layout_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/DIMEN_32PX"
+        android:layout_marginTop="@dimen/DIMEN_36PX"
+        android:drawablePadding="@dimen/DIMEN_20PX"
+        android:gravity="center"
+        android:text="@string/old_pass"
+        android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+    <EditText
+        android:id="@+id/et_old_password"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/DIMEN_94PX"
+        android:layout_marginLeft="@dimen/DIMEN_32PX"
+        android:layout_marginRight="@dimen/DIMEN_32PX"
+        android:layout_marginTop="@dimen/DIMEN_20PX"
+        android:background="@drawable/bg_edit_shape"
+        android:hint="@string/old_pass_input"
+        android:inputType="textPassword"
+        android:drawablePadding="@dimen/DIMEN_20PX"
+        android:drawableStart="@mipmap/ic_pass"
+        android:paddingEnd="@dimen/DIMEN_20PX"
+        android:paddingStart="@dimen/DIMEN_20PX"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/DIMEN_32PX"
+        android:layout_marginTop="@dimen/DIMEN_36PX"
+        android:drawablePadding="@dimen/DIMEN_20PX"
+        android:gravity="center"
+        android:text="@string/new_pass"
+        android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/DIMEN_94PX"
+        android:layout_marginLeft="@dimen/DIMEN_32PX"
+        android:layout_marginRight="@dimen/DIMEN_32PX"
+        android:layout_marginTop="@dimen/DIMEN_20PX"
+        android:background="@drawable/bg_edit_shape"
+        android:hint="@string/new_pass_input"
+        android:inputType="textPassword"
+        android:drawablePadding="@dimen/DIMEN_20PX"
+        android:drawableStart="@mipmap/ic_pass"
+        android:paddingEnd="@dimen/DIMEN_20PX"
+        android:paddingStart="@dimen/DIMEN_20PX"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+    <EditText
+        android:id="@+id/et_password_next"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/DIMEN_94PX"
+        android:layout_marginLeft="@dimen/DIMEN_32PX"
+        android:layout_marginRight="@dimen/DIMEN_32PX"
+        android:layout_marginTop="@dimen/DIMEN_36PX"
+        android:background="@drawable/bg_edit_shape"
+        android:hint="@string/new_pass_next_input"
+        android:inputType="textPassword"
+        android:drawablePadding="@dimen/DIMEN_20PX"
+        android:drawableStart="@mipmap/ic_pass"
+        android:paddingEnd="@dimen/DIMEN_20PX"
+        android:paddingStart="@dimen/DIMEN_20PX"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/ButtonTheme"
+        android:layout_marginTop="@dimen/DIMEN_40PX"
+        android:text="@string/btn_save" />
+
+</LinearLayout>

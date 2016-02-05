@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DIMEN_90PX"
+        android:background="@color/main_blue">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/DIMEN_38PX"
+            android:layout_height="@dimen/DIMEN_38PX"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/DIMEN_24PX"
+            android:src="@drawable/bg_back_selector" />
+
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_width="@dimen/DIMEN_420PX"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/DIMEN_8PX"
+            android:hint="@string/input_book_name"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/DIMEN_24PX"
+            android:layout_toRightOf="@id/input_text"
+            android:src="@mipmap/ic_search_p" />
+    </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_refresh_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/frame_line_grey"
+        android:dividerHeight="@dimen/DIMEN_0.5PX"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:scrollbars="none"
+        android:smoothScrollbar="true"
+        ptr:ptrMode="both" />
+</LinearLayout>

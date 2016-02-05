@@ -42,7 +42,7 @@ public class User {
      * userSchool : DONGGUANINSTITUTEOFTECHNOLOGY
      */
 
-    private List<EcListEntity> ecList;
+    public List<EcListEntity> ecList;
 
     public void setFailure(boolean failure) {
         this.failure = failure;
@@ -86,24 +86,24 @@ public class User {
 
     public static class EcListEntity {
         private String adress;
-        private Object bitmap;
+        private String bitmap;
         private String classes;
         private String creater;
         private String createrTime;
         private String lastUpdateTime;
-        private Object lastUpdater;
+        private String lastUpdater;
         private String passWord;
-        private Object remake;
+        private String remake;
         private long userId;
         private String userName;
-        private Object userProfile;
+        private String userProfile;
         private String userSchool;
 
         public void setAdress(String adress) {
             this.adress = adress;
         }
 
-        public void setBitmap(Object bitmap) {
+        public void setBitmap(String bitmap) {
             this.bitmap = bitmap;
         }
 
@@ -123,7 +123,7 @@ public class User {
             this.lastUpdateTime = lastUpdateTime;
         }
 
-        public void setLastUpdater(Object lastUpdater) {
+        public void setLastUpdater(String lastUpdater) {
             this.lastUpdater = lastUpdater;
         }
 
@@ -131,7 +131,7 @@ public class User {
             this.passWord = passWord;
         }
 
-        public void setRemake(Object remake) {
+        public void setRemake(String remake) {
             this.remake = remake;
         }
 
@@ -143,7 +143,7 @@ public class User {
             this.userName = userName;
         }
 
-        public void setUserProfile(Object userProfile) {
+        public void setUserProfile(String userProfile) {
             this.userProfile = userProfile;
         }
 
@@ -155,7 +155,7 @@ public class User {
             return adress;
         }
 
-        public Object getBitmap() {
+        public String getBitmap() {
             return bitmap;
         }
 
@@ -175,7 +175,7 @@ public class User {
             return lastUpdateTime;
         }
 
-        public Object getLastUpdater() {
+        public String getLastUpdater() {
             return lastUpdater;
         }
 
@@ -183,7 +183,7 @@ public class User {
             return passWord;
         }
 
-        public Object getRemake() {
+        public String getRemake() {
             return remake;
         }
 
@@ -195,7 +195,7 @@ public class User {
             return userName;
         }
 
-        public Object getUserProfile() {
+        public String getUserProfile() {
             return userProfile;
         }
 

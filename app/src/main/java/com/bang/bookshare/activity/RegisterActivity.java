@@ -56,7 +56,7 @@ public class RegisterActivity extends FrameActivity {
     @InjectView(R.id.et_password_next)
     EditText etPassWordNext;
     @InjectView(R.id.tv_title)
-    CustomHanzTV tvTitle;
+    TextView tvTitle;
 
     private String mLoginPhone;
     private String mPassWord;
@@ -137,6 +137,7 @@ public class RegisterActivity extends FrameActivity {
                         // 写入登录信息
                         PreferencesUtils.setLoginInfo(context, mLoginPhone, mPassWord);
                         openActivityFn(MainActivity.class);
+                        showMsg(user.getMessage());
                     } else {
                         LogUtil.showLog("未能注册并登陆");
                         showMsg(user.getMessage());

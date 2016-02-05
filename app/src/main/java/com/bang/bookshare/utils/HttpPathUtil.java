@@ -32,14 +32,39 @@ public class HttpPathUtil {
         return IPS + "/bookShare/loginAction.action";
     }
 
+    // getUserIfo
+    public static String getUserIfo() {
+        return IPS + "/bookShare/findUserAction.action";
+    }
+
+    // updateUser
+    public static String updateUser() {
+        return IPS + "/bookShare/updateUserAction.action";
+    }
+
     // getBookIfo
     public static String getBookIfo() {
         return IPS + "/bookShare/findBookAction.action";
     }
 
+    // searchBookIfo
+    public static String searchBookIfo() {
+        return IPS + "/bookShare/findBookAction.action";
+    }
+
+    // createBook
+    public static String createBook() {
+        return IPS + "/bookShare/createBookAction.action";
+    }
+
     // deleteBook
     public static String deleteBook() {
         return IPS + "/bookShare/removeBookAction.action";
+    }
+
+    // updateBook
+    public static String updateBook() {
+        return IPS + "/bookShare/updateBookAction.action";
     }
 
     // getServiceNote

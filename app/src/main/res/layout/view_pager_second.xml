@@ -9,6 +9,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="centerCrop"
-        android:src="@mipmap/bg_splash_02" />
+        android:src="@mipmap/bg_splash_03" />
 
 </LinearLayout>

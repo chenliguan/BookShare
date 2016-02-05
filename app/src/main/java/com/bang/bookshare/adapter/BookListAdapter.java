@@ -63,6 +63,9 @@ public class BookListAdapter extends SimpleBaseAdapter<Book.EcListEntity> {
         holder.civHeadAfd.setImageUrl(entity.getBookName(), R.mipmap.ic_head, R.mipmap.ic_head);
         holder.tvBookName.setText(entity.getBookName());
         holder.tvProfile.setText(entity.getBookProfile());
+        // 是否被借阅
+        if (entity.getIsBorrowed().equals("NO"))
+            holder.ivIsBorrowed.setVisibility(View.INVISIBLE);
         // 删除监听
         holder.llytDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +89,7 @@ public class BookListAdapter extends SimpleBaseAdapter<Book.EcListEntity> {
                                         } else {
                                             // 解析数据
                                             Book book = Book.praseJson(response);
-                                            // 用户注册并登陆业务判断
+                                            // 请求业务判断
                                             if (book.isSuccess()) {
                                                 // 更新本地
                                                 mList.remove(position);
@@ -136,8 +139,8 @@ public class BookListAdapter extends SimpleBaseAdapter<Book.EcListEntity> {
         TextView tvBookName;
         @InjectView(R.id.tv_profile)
         TextView tvProfile;
-        @InjectView(R.id.iv_delete)
-        ImageView ivDelete;
+        @InjectView(R.id.iv_is_borrowed)
+        ImageView ivIsBorrowed;
         @InjectView(R.id.llyt_delete)
         RelativeLayout llytDelete;
 

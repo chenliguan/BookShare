@@ -27,14 +27,14 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/DIMEN_32PX">
 
         <LinearLayout
             android:id="@+id/llyt_dots"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/DIMEN_60PX"
             android:gravity="center"
             android:orientation="horizontal"/>
     </RelativeLayout>

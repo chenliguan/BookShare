@@ -2,11 +2,152 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.guan.o2o.activity.UserInfoActivity">
+    android:orientation="vertical">
 
     <include
         android:id="@+id/layout_title"
         layout="@layout/layout_title" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/DIMEN_94PX"
+            android:layout_marginLeft="@dimen/DIMEN_32PX"
+            android:layout_marginRight="@dimen/DIMEN_32PX"
+            android:layout_marginTop="@dimen/DIMEN_24PX">
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/bg_edit_shape"
+                android:drawablePadding="@dimen/DIMEN_20PX"
+                android:drawableStart="@mipmap/ic_person_my"
+                android:hint="@string/name_input"
+                android:paddingEnd="@dimen/DIMEN_20PX"
+                android:paddingStart="@dimen/DIMEN_20PX"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/DIMEN_94PX"
+            android:layout_marginLeft="@dimen/DIMEN_32PX"
+            android:layout_marginRight="@dimen/DIMEN_32PX"
+            android:layout_marginTop="@dimen/DIMEN_20PX"
+            android:background="@drawable/bg_edit_shape"
+            android:drawablePadding="@dimen/DIMEN_20PX"
+            android:drawableStart="@mipmap/ic_phone_my"
+            android:focusable="false"
+            android:hint="@string/phone_input"
+            android:inputType="phone"
+            android:paddingStart="@dimen/DIMEN_20PX"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+        <EditText
+            android:id="@+id/et_profile"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/DIMEN_94PX"
+            android:layout_marginLeft="@dimen/DIMEN_32PX"
+            android:layout_marginRight="@dimen/DIMEN_32PX"
+            android:layout_marginTop="@dimen/DIMEN_20PX"
+            android:background="@drawable/bg_edit_shape"
+            android:drawablePadding="@dimen/DIMEN_20PX"
+            android:drawableStart="@mipmap/ic_profile"
+            android:hint="@string/profile_input"
+            android:paddingStart="@dimen/DIMEN_20PX"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/DIMEN_32PX"
+            android:layout_marginTop="@dimen/DIMEN_20PX"
+            android:drawablePadding="@dimen/DIMEN_20PX"
+            android:drawableStart="@mipmap/ic_addr_my"
+            android:gravity="center"
+            android:text="@string/ship_address"
+            android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/DIMEN_94PX"
+            android:layout_marginLeft="@dimen/DIMEN_32PX"
+            android:layout_marginRight="@dimen/DIMEN_32PX"
+            android:layout_marginTop="@dimen/DIMEN_20PX"
+            android:background="@drawable/bg_edit_shape">
+
+            <EditText
+                android:id="@+id/et_dri_school"
+                style="@style/EditText_info"
+                android:text="@string/school" />
+
+            <Spinner
+                android:id="@+id/spr_school"
+                style="@style/EditText_info_detail"
+                android:layout_toEndOf="@+id/et_dri_school" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/DIMEN_94PX"
+            android:layout_marginLeft="@dimen/DIMEN_32PX"
+            android:layout_marginRight="@dimen/DIMEN_32PX"
+            android:layout_marginTop="@dimen/DIMEN_20PX"
+            android:background="@drawable/bg_edit_shape">
+
+            <EditText
+                android:id="@+id/et_dri_class"
+                style="@style/EditText_info"
+                android:text="@string/classes" />
+
+            <EditText
+                android:id="@+id/et_class"
+                style="@style/EditText_info_detail"
+                android:layout_toEndOf="@+id/et_dri_class" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/DIMEN_94PX"
+            android:layout_marginLeft="@dimen/DIMEN_32PX"
+            android:layout_marginRight="@dimen/DIMEN_32PX"
+            android:layout_marginTop="@dimen/DIMEN_20PX"
+            android:background="@drawable/bg_edit_shape">
+
+            <EditText
+                android:id="@+id/et_dri_dorm"
+                style="@style/EditText_info"
+                android:text="@string/dorm" />
+
+            <EditText
+                android:id="@+id/et_dorm"
+                style="@style/EditText_info_detail"
+                android:layout_toEndOf="@+id/et_dri_dorm" />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/Wrap_content"
+            android:layout_marginLeft="@dimen/DIMEN_32PX"
+            android:layout_marginTop="@dimen/DIMEN_8PX"
+            android:gravity="center"
+            android:text="@string/input_tips"
+            android:textSize="@dimen/TEXT_SIZE_14SP" />
+
+        <Button
+            android:id="@+id/btn_save"
+            style="@style/ButtonTheme"
+            android:layout_marginTop="@dimen/DIMEN_20PX"
+            android:text="@string/btn_save"
+            android:textSize="@dimen/TEXT_SIZE_16SP" />
+    </LinearLayout>
 </LinearLayout>
